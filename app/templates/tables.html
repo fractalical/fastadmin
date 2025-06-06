@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block sidebar %}
+<h3>Tables</h3>
+<ul>
+{% for name in tables %}
+<li><a href="/table/{{ name }}">{{ name }}</a></li>
+{% endfor %}
+</ul>
+{% endblock %}
+{% block content %}
+<h1>Choose a table from the list</h1>
+{% endblock %}
