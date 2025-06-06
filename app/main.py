@@ -6,7 +6,7 @@ import json
 from pathlib import Path
 
 app = FastAPI()
-templates = Jinja2Templates(directory='templates')
+templates = Jinja2Templates(directory=str(Path(__file__).resolve().parent / 'templates'))
 SCHEMA_PATH = Path('schema.json')
 db_engine = None
 
