@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block sidebar %}
+<h3>Tables</h3>
+<ul>
+{% for name in tables %}
+<li><a href="/table/{{ name }}">{{ name }}</a></li>
+{% endfor %}
+</ul>
+{% endblock %}
+{% block content %}
+<h1>Table: {{ table }}</h1>
+<table border="1" cellspacing="0" cellpadding="5">
+  <thead>
+    <tr>
+    {% for col in columns %}
+      <th>{{ col }}</th>
+    {% endfor %}
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in rows %}
+    <tr>
+      {% for col in columns %}
+      <td>{{ row[col] }}</td>
+      {% endfor %}
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
