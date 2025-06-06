@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Connect to Database</h1>
+{% if error %}<p style="color:red">{{ error }}</p>{% endif %}
+<form action="/connect" method="post">
+  <input type="text" name="db_url" placeholder="postgresql://user:pass@host/dbname" style="width:100%" />
+  <button type="submit">Connect</button>
+</form>
+{% endblock %}
